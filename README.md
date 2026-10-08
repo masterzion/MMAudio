@@ -96,6 +96,14 @@ See [MODELS.md](docs/MODELS.md) for more details.
 By default, these scripts use the `large_44k_v2` model. 
 In our experiments, inference only takes around 6GB of GPU memory (in 16-bit mode) which should fit in most modern GPUs.
 
+### ComfyUI video-to-audio workflow
+
+The ComfyUI integration uses the native `Load Video` node, the MMAudio synchronized-audio node, and an audio output node:
+
+![MMAudio ComfyUI video-to-audio workflow](docs/images/comfyui-video-to-audio-workflow.png)
+
+Load the workflow from [workflows/mmaudio_video_to_audio.json](workflows/mmaudio_video_to_audio.json), select a video in `Load Video`, enter a prompt, and queue the workflow. The generated FLAC file is saved in the ComfyUI output directory.
+
 ### Command-line interface
 
 With `demo.py`
