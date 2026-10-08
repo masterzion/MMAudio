@@ -5,7 +5,11 @@ from typing import Optional
 
 import numpy as np
 import torch
-from colorlog import ColoredFormatter
+try:
+    from colorlog import ColoredFormatter
+except ImportError:
+    # colorlog is only used for CLI cosmetics; ComfyUI already owns logging.
+    from logging import Formatter as ColoredFormatter
 from PIL import Image
 from torchvision.transforms import v2
 
